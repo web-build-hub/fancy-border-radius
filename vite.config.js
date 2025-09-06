@@ -3,9 +3,9 @@ import { resolve } from "path";
 
 export default defineConfig({
   root: "./",
-  base: "/fancy-border-radius/",
   build: {
-    outDir: "dist",
+    copyPublicDir: false,
+    outDir: "/Users/mora/Workspace/mora/durka-vscode/res/webview/fancy-border-radius",
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),

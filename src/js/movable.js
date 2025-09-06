@@ -64,3 +64,14 @@ export default class Movable {
     return (Math.min(max, Math.max(min, v)))
   }
 }
+
+document.addEventListener('click', e => {
+  /** @type {HTMLAnchorElement} */
+  const element = e.target
+  if (element.tagName === 'A' && element.dataset.href) {
+    const href = element.dataset.href
+    window.bridge.call('navigate', { page: '/fancy-border-radius' + href })
+    e.preventDefault()
+    e.stopPropagation()
+  }
+})
